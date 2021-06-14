@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties -- update these for your own design */
+
+:root {
+    --ff-primary: sans-serif;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #1c1938;
+    --clr-text: #fff;
+    --clr-dark: #0a0c1b;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 2rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1rem;
+    --fs-body: .8rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 3rem;
+        --fs-h2: 2.25rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1rem;
+    }
+}
+
+/* General Styles */
+body {
+    background: var(--clr-dark);
+    color: var(--clr-text);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1)}
+h2 { font-size: var(--fs-h2)}
+h3 { font-size: var(--fs-h3)}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--description {
+    margin-bottom: 2em;
+}
+
+.statistics__item__subtitle {
+    text-transform: uppercase;
+    letter-spacing: .15em;
+}
+
+.highlight {
+    color: #ac60dc;
+}
+
+
+/* Card Styling */
+.card {
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    background-color: var(--clr-light);
+    grid-template-areas:
+        "hero" "hero"
+        "desc" "desc"
+        "stat" "stat";
+    text-overflow: wrap;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+.description {
+    grid-area: desc;
+}
+
+/* Layout styling */
+.statistics {
+    grid-area: stat;
+}
+
+/* */
